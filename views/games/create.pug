@@ -1,0 +1,29 @@
+extends ../layout.pug
+
+block content 
+    h2 Create Game
+
+    form(method='POST')
+        br
+        .form-group.fs-5.p-0
+            label.form-label(for="title") Title
+            input.form-control.w-50(type="text" name='title' id='title' value = game == undefined ? '' : game.title)
+            br
+            label(for="image") Image URL
+            input.form-control.w-50(type="text" name="image" id ="image" value = game == undefined ? '' : game.imageurl)
+            br
+            label(for="description") Description
+            input.form-control.w-50(type="text" name ='description' id='description'  value = game == undefined ? '' : game.description )
+            br
+            label(for="company") Company
+            input.form-control.w-50(type="text" name ='company' id='company'  value = game == undefined ? '' : game.company_name)
+            br
+            label(for="console") Console
+            input.form-control.w-50(type="text" name ='console' id='console'  value = game == undefined ? '' : game.console_name)
+            br
+            button.btn.btn-primary(type="submit" ) Add New Game
+
+    if errors
+        each error in errors
+            p= error.msg
+

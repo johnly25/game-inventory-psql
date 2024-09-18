@@ -1,0 +1,15 @@
+extends ../layout.pug
+block content 
+    if Object.keys(game).length !== 0
+        h2 #{game.title}
+        img(src=game.imageurl style='height: 250px')
+        br
+        br
+        h3 #{game.console_name}
+        h3 #{game.company_name}
+        p Description:
+        | #{game.description}
+
+    else 
+        | Something went wrong
+

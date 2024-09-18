@@ -1,0 +1,20 @@
+extends ../layout.pug
+
+block content 
+    h2 #{title}
+
+    .row.row-cols-1.row-cols-md-4.g-5.p-5
+        each game in games
+         .col
+            .card.h-100
+                a.text-center(href="/games/details/" + + game.id)
+                    img.card-img-top.w-75(src=game.imageurl , alt="picture of game")
+                .card-body.d-flex.align-items-end.justify-content-center
+                    h5.card-title.text-center #{game.title} &nbsp
+                .card-footer.text-end
+                    small
+                        a(href="/games/details/" + game.id) View
+                        |&nbsp&nbsp
+                        a(href="/games/edit/" + game.id) Edit
+                        |&nbsp&nbsp
+                        a(href="/games/delete/" + game.id) Delete
