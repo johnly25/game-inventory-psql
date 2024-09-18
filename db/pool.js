@@ -4,7 +4,7 @@ require('dotenv').config();
 // All of the following properties should be read from environment variables
 // We're hardcoding them here for simplicity
 module.exports = new Pool({
-  connectionString: process.env.DEV_DB_URL
+  connectionString: process.env.DB_URL
 });
 
 // 
